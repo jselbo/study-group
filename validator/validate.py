@@ -29,10 +29,14 @@ def check_all(args_to_output: List[Tuple[List[str], str]]):
     if not all_pass:
         print("Some test cases failed!", file=sys.stderr)
         sys.exit(2)
+    else:
+        print("Passed all test cases!")
 
 
 # TODO add support for future problems
 check_all([
     (["123", "456"], "579"),
     (["89752897", "103420093"], "193172990"),
+    (["0", "0"], "0"),
+    (["98204389028349082340899", "723487239847892347987234"], "821691628876241430328133"),
 ])
