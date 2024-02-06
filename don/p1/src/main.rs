@@ -1,5 +1,6 @@
 use std::env;
 use anyhow::{bail, anyhow, Error};
+use ethnum::u256;
 
 fn main() -> Result<(), Error> {
     let args:Vec<String> = env::args().collect();
@@ -10,12 +11,12 @@ fn main() -> Result<(), Error> {
 
     let error_str = "Postive, Whole, numbers only";
 
-    let num1:u128 = match args[args.len() - 2].parse() {
+    let num1:u256 = match args[args.len() - 2].parse() {
         Ok(i) => i,
         Err(_) => return Err(anyhow!(error_str)),
     };
 
-    let num2:u128 = match args[args.len() - 1].parse(){
+    let num2:u256 = match args[args.len() - 1].parse(){
         Ok(i) => i,
         Err(_) => return Err(anyhow!(error_str)),
     };
