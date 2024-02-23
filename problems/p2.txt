@@ -25,6 +25,7 @@ $ ./p2 input.txt
 - No negative numbers
 - No decimals
 - 0 is allowed
+- Always at least 1 digit
 
 Source: https://adventofcode.com/2023/day/1
 
