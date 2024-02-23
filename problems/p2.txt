@@ -1,0 +1,31 @@
+= Problem =
+
+Find the secret number within each string seperated by a new line. Return the sum of all the secret passkeys.
+
+Given a string from the input file take the first digit and the last digit of the string to create the single 2 digit number passkey. 
+Then add it together for the output. 
+
+= Format =
+
+Input: text file seperated by `\n`'s
+1abc2
+pqr3stu8vwx
+a1b2c3d4e5f
+treb7uchet
+
+Output:
+142
+
+Example: 
+$ ./p2 input.txt
+>142
+
+= Assumptions =
+
+- No negative numbers
+- No decimals
+- 0 is allowed
+
+Source: https://adventofcode.com/2023/day/1
+
+GLHF 
