@@ -1,15 +1,9 @@
-import subprocess
 import sys
 from typing import List, Tuple
+from common import validate_output
 
-def check(program_exec: str, program_args: List[str], expected_output: str):
-    output = subprocess.check_output([program_exec] + program_args).strip().decode("utf-8")
-    if output != expected_output:
-        print(f"Invalid output for input `{' '.join(program_args)}`:", file=sys.stderr)
-        print(f"  EXPECTED: {expected_output}", file=sys.stderr)
-        print(f"  ACTUAL:   {output}", file=sys.stderr)
-        return False
-    return True
+def check(program_exec: str, program_args: List[str], expected_output: str) -> bool:
+    return validate_output(program_exec, program_args, expected_output)
 
 
 def check_all(program_exec: str, args_to_output: List[Tuple[List[str], str]]):

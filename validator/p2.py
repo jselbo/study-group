@@ -2,15 +2,10 @@ import tempfile
 import subprocess
 import sys
 from typing import List, Tuple
+from common import validate_output
 
 def check(program_exec: str, input: str, expected_output: str) -> bool:
-    output = subprocess.check_output([program_exec, input]).strip().decode("utf-8")
-
-    if output != expected_output:
-        print(f"  EXPECTED: {expected_output}", file=sys.stderr)
-        print(f"  ACTUAL:   {output}", file=sys.stderr)
-        return False
-    return True
+    return validate_output(program_exec, [input], expected_output)
 
 def make_file(input: List[str]) -> str:
     with tempfile.NamedTemporaryFile(mode='w', delete=False) as temp_file:
